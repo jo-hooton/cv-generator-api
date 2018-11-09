@@ -1,0 +1,2 @@
+class TextItem < ApplicationRecord
+end
