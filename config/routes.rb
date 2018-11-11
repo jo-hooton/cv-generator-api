@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users
+  resources :cvs
+  resources :text_items
+  resources :lists
+  resources :list_items
+  resources :skills
+  resources :contact_details
+  post 'signin', to: 'users#sign_in'
+  get 'validate', to: 'users#validate'
 end
