@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :skills
   resources :contact_details
   post 'signin', to: 'users#sign_in'
+  post 'cvs', to: 'cvs'
+  
   get 'validate', to: 'users#validate'
 end
