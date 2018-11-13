@@ -1,9 +1,12 @@
 class Cv < ApplicationRecord
 
-    belongs_to: :user
-    has_many: :text_items
-    has_many: :lists
-    has_many: :skills
-    has_one: :contact_detail
+  creating_new_CV
+    belongs_to :user
+    has_many :list_items
+    has_many :skills
+    has_many :text_items
+    has_many :contact_details
+
+
 
 end

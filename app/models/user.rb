@@ -1,4 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
-    has_many: :cvs
+
+creating_new_CV
+    has_many :cvs
+
+
 end

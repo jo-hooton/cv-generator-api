@@ -1,3 +1,7 @@
 class TextItem < ApplicationRecord
-    belongs_to: :cv
+
+creating_new_CV
+    belongs_to :cv
+
+
 end
