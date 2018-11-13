@@ -1,3 +1,5 @@
 class ListItem < ApplicationRecord
-    belongs_to: :list
+creating_new_CV
+    belongs_to :list
+
 end
