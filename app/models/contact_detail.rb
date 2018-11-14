@@ -1,5 +1,4 @@
 class ContactDetail < ApplicationRecord
-
-    belongs_to :cv
+   belongs_to :cv
 
 end
