@@ -47,6 +47,10 @@ end
         end
 
     end
+
+    def update
+        user = get_current_user
+    end
 end
 
 
