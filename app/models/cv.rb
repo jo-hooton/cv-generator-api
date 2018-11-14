@@ -4,5 +4,4 @@ class Cv < ApplicationRecord
     has_many :lists
     has_many :skills
     has_many :contact_details
-
 end
