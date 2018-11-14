@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'get_cvs', to: 'users#get_CV'
   post 'signin', to: 'users#sign_in'
   get 'validate', to: 'users#validate'
+  patch 'update_photo', to: 'users#update_photo'
 end
