@@ -1,3 +1,3 @@
 class Skill < ApplicationRecord
-    belongs_to: cv
+    belongs_to :cv
 end
