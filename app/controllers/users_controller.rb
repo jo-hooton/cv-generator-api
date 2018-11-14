@@ -21,7 +21,16 @@ end
     def get_CV
         user = get_current_user
         if user 
-            render json: user.CV
+            cvs = []
+            user.cvs.each do |cv| 
+                lists = []
+                cv.lists.each do |list|
+                    lists << { name: list.title, id: list.id, cv_id: list.cv_id, list_items: list.list_items }
+                end
+                cvs << { title: cv.name, id: cv.id, text_items: cv.text_items, lists: lists, skills: cv.skills, contact_details: cv.contact_details }
+            end
+            render json: cvs
+
         else
             render json: {error: "you are not signed in."}
         end
