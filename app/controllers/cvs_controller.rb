@@ -31,6 +31,12 @@ class CvsController < ApplicationController
             Skill.create(name: skill[:skill], percentage: skill[:skillfulness], cv_id: @cv.id)
             end
         end
+
+        if params[:contact].length > 0
+            params[:contact].each do |contact_detail| 
+            ContactDetail.create(address: contact_detail[:address], phone_number: contact_detail[:phoneNumber], cv_id: @cv.id)
+            end
+        end
       
         render json: @cv
 
