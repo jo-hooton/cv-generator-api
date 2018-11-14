@@ -7,6 +7,7 @@ class CvsController < ApplicationController
 
     def create
         user = get_current_user
+        user.update(photo: params[:photo])
        @cv = Cv.create(user_id: user.id, name: params[:title]) 
        @bio = TextItem.create(cv_id: @cv.id, title: "Bio", content: params[:bio])
         # user.update(photo: params[:photo]) 

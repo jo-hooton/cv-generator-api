@@ -27,7 +27,7 @@ end
                 cv.lists.each do |list|
                     lists << { name: list.title, id: list.id, cv_id: list.cv_id, list_items: list.list_items }
                 end
-                cvs << { title: cv.name, id: cv.id, text_items: cv.text_items, lists: lists, skills: cv.skills, contact_details: cv.contact_details }
+                cvs << { title: cv.name, id: cv.id, text_items: cv.text_items, lists: lists, skills: cv.skills, contact_details: cv.contact_details, photo: user.photo }
             end
             render json: cvs
 
