@@ -50,7 +50,13 @@ class CvsController < ApplicationController
                 cv.lists.each do |list|
                     lists << { name: list.title, id: list.id, cv_id: list.cv_id, list_items: list.list_items }
                 end
-                cvs << { title: cv.name, id: cv.id, text_items: cv.text_items, lists: lists, skills: cv.skills, contact_details: cv.contact_details }
+                photo = ''
+                email = ''
+                User.all.each do |user|
+                    photo = user.photo
+                    email = user.email
+                end
+                cvs << { title: cv.name, id: cv.id, text_items: cv.text_items, lists: lists, skills: cv.skills, contact_details: cv.contact_details, photo: photo, email: email }
             end
             render json: cvs
 
