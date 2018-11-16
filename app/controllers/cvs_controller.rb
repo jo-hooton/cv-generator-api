@@ -53,8 +53,10 @@ class CvsController < ApplicationController
                 photo = ''
                 email = ''
                 User.all.each do |user|
-                    photo = user.photo
+                    if user.id === cv.user_id
+                    photo = user.photo 
                     email = user.email
+                    end
                 end
                 cvs << { title: cv.name, id: cv.id, text_items: cv.text_items, lists: lists, skills: cv.skills, contact_details: cv.contact_details, photo: photo, email: email }
             end
