@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post 'signin', to: 'users#sign_in'
   get 'validate', to: 'users#validate'
   patch 'update_photo', to: 'users#update_photo'
+  get 'get_all_cvs', to: 'cvs#get_all_cvs'
 end

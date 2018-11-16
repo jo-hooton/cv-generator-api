@@ -1,7 +1,7 @@
 class CvsController < ApplicationController
 
     def index
-        @cvs = CV.all
+        @cvs = Cv.all
         render json: @cvs
       end
 
@@ -41,5 +41,18 @@ class CvsController < ApplicationController
         render json: @cv
 
    
+    end
+
+    def get_all_cvs
+            cvs = []
+            Cv.all.each do |cv| 
+                lists = []
+                cv.lists.each do |list|
+                    lists << { name: list.title, id: list.id, cv_id: list.cv_id, list_items: list.list_items }
+                end
+                cvs << { title: cv.name, id: cv.id, text_items: cv.text_items, lists: lists, skills: cv.skills, contact_details: cv.contact_details }
+            end
+            render json: cvs
+
     end
 end
